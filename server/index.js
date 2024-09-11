@@ -1,72 +1,40 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import dotenv from 'dotenv';
+import express, { json } from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv, { config } from "dotenv";
 dotenv.config();
 
-import User from './models/User.js';
-import Transaction from './models/Transaction.js';
-
+import { postLogin,postSignup} from "./controllers/user.js";
+import { postTransaction , getTransactions, deleteTransaction} from "./controllers/transaction.js";
 const app = express();
 app.use(express.json());
 app.use(cors());
-
-
-// connect to mangoDB
+const PORT = process.env.PORT || 5000;
 
 const connectDB = async () => {
-    const conn = await mongoose.connect(process.env.MANGO_URI,)
-    if (conn) {
-        console.log(`MongoDB connected successfully..!✅`);
-    }
+  const conn = await mongoose.connect(process.env.MONGO_URL);
+  if (conn) {
+    console.log("MongoDB connected successfully...✅");
+  }
 };
 connectDB();
 
-app.get('/', (req, res) => {
-    res.json({
-        message: `Welcome to Expense Tracker API`
-    })
-})
+app.get("/", (req, res) => {
+  res.json({
+    message: "Welcome to the API",
+  });
+});
 
+app.post("/signup", postSignup);
 
-app.post("/signup", async (req, res) => {
-    const { fullName, email, password, dob } = req.body;
+app.post("/login", postLogin);
 
-    const user = new user({
-        fullName,
-        email,
-        password,
-        dob: new Date(dob)
-    });
+app.post('/transaction', postTransaction)
 
-    try{
+app.get('/transactions', getTransactions)
 
-        const savedUser = await user.save();
-
-        res.json({
-            success: true,
-            message: `Signup successfully...!`,
-            data: savedUser
-        })
-    }
-    catch(e){
-        res.json({
-            success: false,
-            message: e.message,
-            data: null
-        })
-    }
-})
-
-app.post("/login", (req, res) => {
-    const {email, password } = req.body;
-
-    const user = User.find
-})
-
-
-const PORT = process.env.PORT || 5000;
+app.delete('/transaction/:id', deleteTransaction)
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-})
+  console.log(`Server is running on port ${PORT}`);
+});
