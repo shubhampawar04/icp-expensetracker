@@ -1,0 +1,114 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background-color: #232946;
+    scroll-behavior: smooth;
+  }
+  
+  
+  @media (max-width: 500px) {
+    .responsive-small-padding {
+      padding: 20px 10px;
+      margin: 10px 0;
+    }
+  
+    .text-small {
+      font-size: 14px;
+    }
+  }
+  
+  .auth-container {
+    background-color: #f7f8fc;
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+  }
+  
+  .auth-heading {
+    font-size: 28px;
+    font-weight: 600;
+    color: #232946;
+    margin-bottom: 20px;
+  }
+  
+  .input-box {
+    width: 80%;
+    border: 2px solid #d1d1d1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .input-box:focus,
+  .input-box:active {
+    outline: none;
+    border-color: #3f72af;
+    box-shadow: 0 0 10px rgba(63, 114, 175, 0.5);
+  }
+  
+  .auth-btn {
+    display: block;
+    width: 60%;
+    background-color: #3f72af;
+    color: #ffffff;
+    border-radius: 8px;
+    margin: 15px auto;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .auth-btn:hover {
+    background-color: #2c568c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(44, 86, 140, 0.3);
+  }
+  
+  .auth-link {
+    color: #3f72af;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .auth-link:hover {
+    color: #2c568c;
+    text-decoration: underline;
+  }
+  
+  .auth-option{
+    width: 86%;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .auth-container {
+      width: 80%;
+      margin: 50px auto;
+    }
+    .auth-heading {
+      font-size: 20px;
+    }
+    .input-box {
+      width: 90%;
+      padding: 8px 10px;
+      margin-bottom: 15px;
+    }
+    .auth-btn {
+      width: 60%;
+      padding: 8px 12px;
+      margin: 8px auto;
+    }
+    .auth-option{
+      width: 98%;
+    }
+  }

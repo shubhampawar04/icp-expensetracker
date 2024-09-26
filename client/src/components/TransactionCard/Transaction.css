@@ -1,0 +1,134 @@
+.transaction-card {
+    width: 95%;
+    height: 70px;
+    background-color: #fffffe;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding:10px 20px;
+    margin: 15px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .transaction-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .transaction-title {
+    position: absolute;
+    top: 10px;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 5px;
+  }
+  
+  .transaction-date {
+    position: absolute;
+   bottom: 10px;
+    left: 20px;
+    font-size: 15px;
+    color: #232946;
+  }
+  
+  .transaction-amount {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  
+  .transaction-category {
+    display: block;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 8px 16px ;
+    border-radius: 20px;
+    
+  }
+  
+  .transaction-type-credit {
+    color: green;
+  }
+  
+  .transaction-type-debit {
+    color: red;
+  }
+  
+  
+  .delete-btn {
+    position: absolute;
+    right: 50%;
+    bottom: 30px;
+    padding: 8px 25px;
+    border-radius: 20px;
+    background-color: #fd7272; 
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+  }
+  
+  .delete-btn:hover {
+    background-color: #ff4b4b; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+  }
+  
+  .delete-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+  @media screen and (max-width: 500px) {
+  
+    .transaction-card {
+      width: 91%;
+      padding:6px 15px;
+      margin: 10px 0;
+    }
+    .transaction-card {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+  
+    .transaction-title {
+      top: 10px;
+      font-size: 20px;
+      margin: 0;
+    }
+  
+    .transaction-amount {
+      right: 20px;
+      top: 10px;
+      font-size: 20px;
+    }
+  
+    .delete-btn {
+      right: 30%;
+      bottom: 40px;
+      padding: 5px 12px;
+      font-size: 12px;
+      border-radius: 8px;
+    }
+  
+    .transaction-date {
+      position: absolute;
+     bottom: 10px;
+      left: 20px;
+      font-size: 15px;
+    }
+  
+    .transaction-category {
+      font-size: 12px;
+      margin-top: 10px;
+      text-align: center;
+      padding: 5px 10px ;
+      
+    }
+  }
